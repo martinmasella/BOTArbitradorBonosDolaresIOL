@@ -35,6 +35,8 @@ namespace BOTArbitradorBonosDolaresIOL
         {
             InitializeComponent();
 			strPlazo = cteCI;
+            txtUsuario.Text = "";
+            txtClave.Text = "";
 		}
 
 		private void AddTicker(string Codigo, string Ticker)
@@ -227,12 +229,16 @@ namespace BOTArbitradorBonosDolaresIOL
 
             txtStatus.Text = "Desocupado";
             FillTickers();
-        }
+            cboPlazo.Items.Clear();
+            cboPlazo.Items.Add("0");
+            cboPlazo.Items.Add("1");
+            cboPlazo.Text = "0";
+		}
 
         private void FillCombo(ref ComboBox cbo)
         {
             cbo.Items.Clear();
-            cbo.Items.AddRange(new string[] { "SJ5","SO5", "AL29", "GD29", "AL30", "GD30", "AL35", "GD35", "AE38", "GD38", "AL41", "GD41", "GD46","AAPL","AMZN", "BABA", "BBD", "GOLD","KO","MELI","MSFT","TSLA" });
+            cbo.Items.AddRange(new string[] { "SY5","SJ5","SO5", "AL29", "GD29", "AL30", "GD30", "AL35", "GD35", "AE38", "GD38", "AL41", "GD41", "GD46","AAPL","AMZN", "BABA", "BBD", "GOLD","KO","MELI","MSFT","TSLA" });
         }
 
         private void tmrToken_Tick_1(object sender, EventArgs e)
@@ -869,5 +875,10 @@ namespace BOTArbitradorBonosDolaresIOL
         {
             tmrRefresh.Interval = int.Parse(cboRefresco.Text) * 1000;
         }
-    }
+
+		private void cboPlazo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			strPlazo = cboPlazo.Text;
+		}
+	}
 }
