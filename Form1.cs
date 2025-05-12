@@ -31,12 +31,14 @@ namespace BOTArbitradorBonosDolaresIOL
 
         SqlConnection oCnn;
 
-        public Form1()
-        {
-            InitializeComponent();
+		public Form1()
+		{
+			InitializeComponent();
 			strPlazo = cteCI;
-            txtUsuario.Text = "";
-            txtClave.Text = "";
+
+			// Asignar valores desde App.config
+			txtUsuario.Text = ConfigurationManager.AppSettings["Usuario"];
+			txtClave.Text = ConfigurationManager.AppSettings["Clave"];
 		}
 
 		private void AddTicker(string Codigo, string Ticker)
