@@ -240,7 +240,7 @@ namespace BOTArbitradorBonosDolaresIOL
         private void FillCombo(ref ComboBox cbo)
         {
             cbo.Items.Clear();
-            cbo.Items.AddRange(new string[] { "SY5","SJ5","SO5", "AL29", "GD29", "AL30", "GD30", "AL35", "GD35", "AE38", "GD38", "AL41", "GD41", "GD46","AAPL","AMZN", "BABA", "BBD", "GOLD","KO","MELI","MSFT","TSLA" });
+            cbo.Items.AddRange(new string[] { "S2Y5","SJ5","SO5", "AL29", "GD29", "AL30", "GD30", "AL35", "GD35", "AE38", "GD38", "AL41", "GD41", "GD46","AAPL","AMZN", "BABA", "BBD", "GOLD","KO","MELI","MSFT","TSLA" });
         }
 
         private void tmrToken_Tick_1(object sender, EventArgs e)
